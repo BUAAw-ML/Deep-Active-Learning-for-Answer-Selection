@@ -493,7 +493,7 @@ class Acquisition(object):
                 cutted_score_seq.append(temp)
 
             for index, item in enumerate(cutted_score_seq):  # shape: question_num, 5, nsamp
-
+                item = np.array(item)
                 print(item.transpose(1,2))
 
                 item = item / np.sum(item,axis=1, keepdims=True)
