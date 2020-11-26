@@ -494,10 +494,11 @@ class Acquisition(object):
 
             for index, item in enumerate(cutted_score_seq):  # shape: question_num, 5, nsamp
                 item = np.array(item)
-                print(item.transpose(1,2))
+                print(item.shape)
+                print(item.transpose(0,1))
 
-                item = item / np.sum(item,axis=1, keepdims=True)
-                print(item.transpose(1,2))
+                item = item / np.sum(item,axis=0, keepdims=True)
+                print(item.transpose(0,1))
                 exit()
 
                 def rankedList(rList):
