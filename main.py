@@ -36,7 +36,7 @@ def parse_args():
     parser.add_argument('--target_size', type=int, default=2, help='')
     parser.add_argument('--word_out_channels', type=int, default=200, help='')
     parser.add_argument('--result_path', default="result/YahooCQA/",help='')
-    parser.add_argument('--device', type=int, default=[1], help='')
+    parser.add_argument('--device', type=int, default=[0], help='')
     parser.add_argument('--sampling_number', type=int, default=3, help='')
 
     args = parser.parse_args()
@@ -64,7 +64,7 @@ def main(args):
             "init_question_num": 32,
             "acquire_question_num_per_round": 32,
             "warm_start_random_seed": 0,
-            "sample_method": "No-Deterministic+DALLL2Layer+0",
+            "sample_method": "No-Deterministic+DALLL2Layer_norm+0",
         },
         {
             "model_name": "BiLSTM",
@@ -79,7 +79,7 @@ def main(args):
             "init_question_num": 32,
             "acquire_question_num_per_round": 32,
             "warm_start_random_seed": 16,
-            "sample_method": "No-Deterministic+DALLL2Layer+16",
+            "sample_method": "No-Deterministic+DALLL2Layer_norm+16",
         },
         {
             "model_name": "BiLSTM",
@@ -94,7 +94,7 @@ def main(args):
             "init_question_num": 32,
             "acquire_question_num_per_round": 32,
             "warm_start_random_seed": 32,
-            "sample_method": "No-Deterministic+DALLL2Layer+32",
+            "sample_method": "No-Deterministic+DALLL2Layer_norm+32",
         },
         {
             "model_name": "BiLSTM",
@@ -109,7 +109,7 @@ def main(args):
             "init_question_num": 32,
             "acquire_question_num_per_round": 32,
             "warm_start_random_seed": 64,
-            "sample_method": "No-Deterministic+DALLL2Layer+64",
+            "sample_method": "No-Deterministic+DALLL2Layer_norm+64",
         },
         {
             "model_name": "BiLSTM",
@@ -124,84 +124,7 @@ def main(args):
             "init_question_num": 32,
             "acquire_question_num_per_round": 32,
             "warm_start_random_seed": 128,
-            "sample_method": "No-Deterministic+DALLL2Layer+128",
-        },
-
-
-        {
-            "model_name": "BiLSTM",
-            "group_name": "[tkde]BiLSTM+Pets+MRR+160+160",
-            "max_performance": 0.80,
-            "data_path": "../../datasets/answer_selection/YahooCQA/data/data-Pets/",
-            "acquire_method": "random",
-            "sub_acquire_method": "",
-            "unsupervised_method": '',
-            "submodular_k": 1.5,
-            "num_acquisitions_round": 50,
-            "init_question_num": 32,
-            "acquire_question_num_per_round": 32,
-            "warm_start_random_seed": 0,
-            "sample_method": "No-Deterministic+randommm2Layer+0",
-        },
-        {
-            "model_name": "BiLSTM",
-            "group_name": "[tkde]BiLSTM+Pets+MRR+160+160",
-            "max_performance": 0.80,
-            "data_path": "../../datasets/answer_selection/YahooCQA/data/data-Pets/",
-            "acquire_method": "random",
-            "sub_acquire_method": "",
-            "unsupervised_method": '',
-            "submodular_k": 1.5,
-            "num_acquisitions_round": 50,
-            "init_question_num": 32,
-            "acquire_question_num_per_round": 32,
-            "warm_start_random_seed": 16,
-            "sample_method": "No-Deterministic+randommm2Layer+16",
-        },
-        {
-            "model_name": "BiLSTM",
-            "group_name": "[tkde]BiLSTM+Pets+MRR+160+160",
-            "max_performance": 0.80,
-            "data_path": "../../datasets/answer_selection/YahooCQA/data/data-Pets/",
-            "acquire_method": "random",
-            "sub_acquire_method": "",
-            "unsupervised_method": '',
-            "submodular_k": 1.5,
-            "num_acquisitions_round": 50,
-            "init_question_num": 32,
-            "acquire_question_num_per_round": 32,
-            "warm_start_random_seed": 32,
-            "sample_method": "No-Deterministic+randommm2Layer+32",
-        },
-        {
-            "model_name": "BiLSTM",
-            "group_name": "[tkde]BiLSTM+Pets+MRR+160+160",
-            "max_performance": 0.80,
-            "data_path": "../../datasets/answer_selection/YahooCQA/data/data-Pets/",
-            "acquire_method": "random",
-            "sub_acquire_method": "",
-            "unsupervised_method": '',
-            "submodular_k": 1.5,
-            "num_acquisitions_round": 50,
-            "init_question_num": 32,
-            "acquire_question_num_per_round": 32,
-            "warm_start_random_seed": 64,
-            "sample_method": "No-Deterministic+randommm2Layer+64",
-        },
-        {
-            "model_name": "BiLSTM",
-            "group_name": "[tkde]BiLSTM+Pets+MRR+160+160",
-            "max_performance": 0.80,
-            "data_path": "../../datasets/answer_selection/YahooCQA/data/data-Pets/",
-            "acquire_method": "random",
-            "sub_acquire_method": "",
-            "unsupervised_method": '',
-            "submodular_k": 1.5,
-            "num_acquisitions_round": 50,
-            "init_question_num": 32,
-            "acquire_question_num_per_round": 32,
-            "warm_start_random_seed": 128,
-            "sample_method": "No-Deterministic+randommm2Layer+128",
+            "sample_method": "No-Deterministic+DALLL2Layer_norm+128",
         },
 
 
