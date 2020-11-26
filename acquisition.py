@@ -520,7 +520,7 @@ class Acquisition(object):
                 print((-t).argsort())
                 rankedt = np.transpose(item_arr[(-t).argsort()]).tolist()  # nsamp, 5
 
-                print(rankedt.shape)
+                print(np.array(rankedt).shape)
                 exit()
                 dList2 = []
                 for i in range(len(rankedt)):
