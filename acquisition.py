@@ -517,11 +517,9 @@ class Acquisition(object):
                 item_arr = np.array(item)
 
                 t = np.mean(item_arr, axis=1)
-                print((-t).argsort())
+
                 rankedt = np.transpose(item_arr[(-t).argsort()]).tolist()  # nsamp, 5
 
-                print(np.array(rankedt).shape)
-                exit()
                 dList2 = []
                 for i in range(len(rankedt)):
                     dList2.append(rankedList(rankedt[i]))
