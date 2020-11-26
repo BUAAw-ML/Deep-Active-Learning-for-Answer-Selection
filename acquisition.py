@@ -494,9 +494,9 @@ class Acquisition(object):
 
             for index, item in enumerate(cutted_score_seq):  # shape: question_num, 5, nsamp
 
-                item = np.array(item)
-                item = item / np.sum(item, axis=0, keepdims=True)
-                item = item.tolist()
+                # item = np.array(item)
+                # item = item / np.sum(item, axis=0, keepdims=True)
+                # item = item.tolist()
 
                 def rankedList(rList):
                     rList = np.array(rList)
@@ -517,8 +517,11 @@ class Acquisition(object):
                 item_arr = np.array(item)
 
                 t = np.mean(item_arr, axis=1)
+                print((-t).argsort())
                 rankedt = np.transpose(item_arr[(-t).argsort()]).tolist()  # nsamp, 5
 
+                print(rankedt.shape)
+                exit()
                 dList2 = []
                 for i in range(len(rankedt)):
                     dList2.append(rankedList(rankedt[i]))

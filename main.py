@@ -51,21 +51,21 @@ def main(args):
         # acquire_method(sub_acquire_method): random(""), no-dete("DAL","BALD"), dete("coreset","entropy",...)
         # ../../datasets/answer_selection/YahooCQA/data/data-FD/
         #evidence, diversity # BiLSTM CNN
-        # {
-        #     "model_name": "BiLSTM",
-        #     "group_name": "[tkde]BiLSTM+Pets+MRR+160+160",
-        #     "max_performance": 0.80,
-        #     "data_path": "../../datasets/answer_selection/YahooCQA/data/data-Pets/",
-        #     "acquire_method": "no-dete",
-        #     "sub_acquire_method": "DAL",
-        #     "unsupervised_method": '',
-        #     "submodular_k": 1.5,
-        #     "num_acquisitions_round": 50,
-        #     "init_question_num": 32,
-        #     "acquire_question_num_per_round": 32,
-        #     "warm_start_random_seed": 0,
-        #     "sample_method": "No-Deterministic+DALLL2Layer_norm+0",
-        # },
+        {
+            "model_name": "BiLSTM",
+            "group_name": "[tkde]BiLSTM+Pets+MRR+160+160",
+            "max_performance": 0.80,
+            "data_path": "../../datasets/answer_selection/YahooCQA/data/data-Pets/",
+            "acquire_method": "no-dete",
+            "sub_acquire_method": "DAL",
+            "unsupervised_method": '',
+            "submodular_k": 1.5,
+            "num_acquisitions_round": 30,
+            "init_question_num": 32,
+            "acquire_question_num_per_round": 32,
+            "warm_start_random_seed": 0,
+            "sample_method": "No-Deterministic+DALLL2Layer_+0",
+        },
         {
             "model_name": "BiLSTM",
             "group_name": "[tkde]BiLSTM+Pets+MRR+160+160",
@@ -79,7 +79,7 @@ def main(args):
             "init_question_num": 32,
             "acquire_question_num_per_round": 32,
             "warm_start_random_seed": 16,
-            "sample_method": "No-Deterministic+DALLL2Layer_norm+16",
+            "sample_method": "No-Deterministic+DALLL2Layer_+16",
         },
         {
             "model_name": "BiLSTM",
@@ -94,7 +94,7 @@ def main(args):
             "init_question_num": 32,
             "acquire_question_num_per_round": 32,
             "warm_start_random_seed": 32,
-            "sample_method": "No-Deterministic+DALLL2Layer_norm+32",
+            "sample_method": "No-Deterministic+DALLL2Layer_+32",
         },
         {
             "model_name": "BiLSTM",
@@ -109,7 +109,7 @@ def main(args):
             "init_question_num": 32,
             "acquire_question_num_per_round": 32,
             "warm_start_random_seed": 64,
-            "sample_method": "No-Deterministic+DALLL2Layer_norm+64",
+            "sample_method": "No-Deterministic+DALLL2Layer_+64",
         },
         {
             "model_name": "BiLSTM",
@@ -124,7 +124,7 @@ def main(args):
             "init_question_num": 32,
             "acquire_question_num_per_round": 32,
             "warm_start_random_seed": 128,
-            "sample_method": "No-Deterministic+DALLL2Layer_norm+128",
+            "sample_method": "No-Deterministic+DALLL2Layer_+128",
         },
 
 
