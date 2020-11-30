@@ -25,7 +25,7 @@ website = "http://charts.nas.buaanlsde.cn"
 
 
 # Update line chart
-def updateLineChart(mrr, sm, gp_name = group_name, max = max_performance):
+def updateLineChart(mrr, sm, gp_name=group_name, max=max_performance):
 
     http = urllib3.PoolManager()
 

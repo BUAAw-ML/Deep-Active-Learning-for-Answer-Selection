@@ -50,7 +50,8 @@ class BiLSTM(nn.Module):
 
         self.dropout = nn.Dropout(p=dropout_p)
         self.linear = nn.Linear(hidden_size, hidden_size//2)
-        self.linear2 = nn.Linear(hidden_size//2, output_size)
+        # self.linear2 = nn.Linear(hidden_size//2, output_size)
+        self.linear2 = nn.Linear(hidden_size, output_size)
         self.Tanh = nn.Tanh()
 
     def forward(self, questions, answers, wordslen_q, wordslen_a, encoder_only=False):
@@ -72,10 +73,11 @@ class BiLSTM(nn.Module):
         if encoder_only:
             return question_features.data.cpu().numpy(), answer_features.data.cpu().numpy(),
 
-        join_features = self.dropout(join_features)
-        output = self.linear(join_features)
-        output = self.Tanh(output)
-        output = self.dropout(output)
+        output = self.dropout(join_features)
+        # output = self.linear(output)
+        # output = self.Tanh(output)
+        # output = self.dropout(output)
+        #The performance is better when only one Fully Connnected Layer is used:
         output = self.linear2(output)
 
         return output
