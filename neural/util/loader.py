@@ -69,7 +69,7 @@ class Loader(object):
         trainpath = os.path.join(datapath, 'data.txt')
 
         data = []
-        with open(trainpath) as f:
+        with open() as f:
             for line in f:
                 content = line.strip().split('#')
                 if len(content) != 3:
