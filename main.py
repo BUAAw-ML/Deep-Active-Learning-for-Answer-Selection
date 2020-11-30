@@ -55,7 +55,7 @@ def main(args):
         {
             "model_name": "BiLSTM",
             "group_name": "[tkde]BiLSTM+Pets+MRR+160+160",
-            "data_path": "../../datasets/answer_selection/YahooCQA/data/data-Pets/",
+            "data_path": "./data/YahooCQA/",
             "acquire_method": "no-dete",
             "sub_acquire_method": "DELO",
             "unsupervised_method": '',
@@ -69,7 +69,7 @@ def main(args):
         {
             "model_name": "BiLSTM",
             "group_name": "[tkde]BiLSTM+Pets+MRR+160+160",
-            "data_path": "../../datasets/answer_selection/YahooCQA/data/data-Pets/",
+            "data_path": "./data/YahooCQA/",
             "acquire_method": "random",
             "sub_acquire_method": "",
             "unsupervised_method": '',
