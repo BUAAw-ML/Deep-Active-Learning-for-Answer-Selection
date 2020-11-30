@@ -54,7 +54,7 @@ def main(args):
 
         {
             "model_name": "BiLSTM",
-            "group_name": "[tkde]BiLSTM+Pets+MRR+160+160",
+            "group_name": "[tkde]BiLSTM+Yahoo+MRR+160+160",
             "data_path": "./data/YahooCQA/",
             "acquire_method": "no-dete",
             "sub_acquire_method": "DELO",
@@ -68,7 +68,7 @@ def main(args):
         },
         {
             "model_name": "BiLSTM",
-            "group_name": "[tkde]BiLSTM+Pets+MRR+160+160",
+            "group_name": "[tkde]BiLSTM+Yahoo+MRR+160+160",
             "data_path": "./data/YahooCQA/",
             "acquire_method": "random",
             "sub_acquire_method": "",
@@ -78,7 +78,7 @@ def main(args):
             "init_question_num": 32,
             "acquire_question_num_per_round": 32,
             "warm_start_random_seed": 0,
-            "sample_method": "Random+DELO+0",
+            "sample_method": "Random+0",
         },
 
 
