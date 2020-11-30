@@ -57,7 +57,7 @@ def main(args):
             "group_name": "[tkde]BiLSTM+Yahoo+MRR+160+160",
             "data_path": "./data/YahooCQA/",
             "acquire_method": "no-dete",
-            "sub_acquire_method": "DELO",
+            "sub_acquire_method": "DAL",
             "unsupervised_method": '',
             "submodular_k": 1.5,
             "num_acquisitions_round": 50,
