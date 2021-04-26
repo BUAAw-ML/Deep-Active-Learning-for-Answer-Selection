@@ -29,7 +29,7 @@ def parse_args():
     parser.add_argument('--sampling_batch_size', type=int, default=500, help='')
     parser.add_argument('--with_sim_feature', type=bool, default=True, help='whether use sim_feature in deep model')
     parser.add_argument('--word_embedding_dim', type=int, default=300, help='')
-    parser.add_argument('--pretrained_word_embedding', default="../datasets/pretrained-word-embedding/glove.6B.300d.txt", help='')  #"../../../../home/zyc/datasets/answer_selection/YahooCQA/pretrained-word-embedding/glove.6B.300d.txt"
+    parser.add_argument('--pretrained_word_embedding', default="./datasets/word_embedding/glove.6B.300d.txt", help='')  #"../../../../home/zyc/datasets/answer_selection/YahooCQA/pretrained-word-embedding/glove.6B.300d.txt"
     parser.add_argument('--dropout', type=float, default=0.5, help='')
     parser.add_argument('--word_hidden_dim', type=int, default=75, help='')
     parser.add_argument('--learning_rate', type=float, default=0.001, help='')
@@ -53,11 +53,11 @@ def main(args):
         #evidence, diversity # BiLSTM CNN
 
         {
-            "model_name": "BiLSTM",
-            "group_name": "[tkde]BiLSTM+Yahoo+MRR+160+160",
-            "data_path": "./data/YahooCQA/",
-            "acquire_method": "no-dete",
-            "sub_acquire_method": "DAL",
+            "model_name": "BiLSTM", # "BiLSTM" or "CNN"
+            "group_name": "BiLSTM+Yahoo+MRR+160+160", # A custom name for recording the expriment result
+            "data_path": "./data/YahooCQA/", 
+            "acquire_method": "no-dete", # "no-dete"(Bayesian dropout) or "dete"
+            "sub_acquire_method": "DAL", #DAL corresponds to DELO
             "unsupervised_method": '',
             "submodular_k": 1.5,
             "num_acquisitions_round": 50,
@@ -68,7 +68,7 @@ def main(args):
         },
         {
             "model_name": "BiLSTM",
-            "group_name": "[tkde]BiLSTM+Yahoo+MRR+160+160",
+            "group_name": "BiLSTM+Yahoo+MRR+160+160",
             "data_path": "./data/YahooCQA/",
             "acquire_method": "random",
             "sub_acquire_method": "",
@@ -238,12 +238,12 @@ def main(args):
             print('*' * 50)
 
             #--------------------------Send data for a visual web page------------------------------
-            # max_performance = config["max_performance"] if "max_performance" in config else 0
-            #
-            # if "group_name" in config:
-            #     updateLineChart(str(test_performance), sample_method, gp_name=config["group_name"], max=max_performance)
-            # else:
-            #     updateLineChart(str(test_performance), sample_method, max=max_performance)
+            max_performance = config["max_performance"] if "max_performance" in config else 0
+            
+            if "group_name" in config:
+                updateLineChart(str(test_performance), sample_method, gp_name=config["group_name"], max=max_performance)
+            else:
+                updateLineChart(str(test_performance), sample_method, max=max_performance)
 
             method_result.append(test_performance)
 
