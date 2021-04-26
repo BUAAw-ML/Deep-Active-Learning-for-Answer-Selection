@@ -238,12 +238,12 @@ def main(args):
             print('*' * 50)
 
             #--------------------------Send data for a visual web page------------------------------
-            max_performance = config["max_performance"] if "max_performance" in config else 0
+            # max_performance = config["max_performance"] if "max_performance" in config else 0
             
-            if "group_name" in config:
-                updateLineChart(str(test_performance), sample_method, gp_name=config["group_name"], max=max_performance)
-            else:
-                updateLineChart(str(test_performance), sample_method, max=max_performance)
+            # if "group_name" in config:
+            #     updateLineChart(str(test_performance), sample_method, gp_name=config["group_name"], max=max_performance)
+            # else:
+            #     updateLineChart(str(test_performance), sample_method, max=max_performance)
 
             method_result.append(test_performance)
 
